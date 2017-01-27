@@ -20,13 +20,114 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="194" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vsh-Fg-g6y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GithubTableViewCell" rowHeight="194" id="So9-lO-mOp" customClass="GithubRepoTableViewCell" customModule="GithubDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="194"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="So9-lO-mOp" id="a5r-nE-fmm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="193"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oox-vZ-pyf">
+                                                    <rect key="frame" x="8" y="8" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="W9I-QA-88F"/>
+                                                        <constraint firstAttribute="width" constant="35" id="feP-iH-6vQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="gbT-hV-WzR">
+                                                    <rect key="frame" x="56" y="135" width="21" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="21" id="0Dy-NH-5ae"/>
+                                                        <constraint firstAttribute="height" constant="21" id="hW5-jL-6MA"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGL-OQ-PTx">
+                                                    <rect key="frame" x="85" y="136.5" width="36" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork" translatesAutoresizingMaskIntoConstraints="NO" id="n70-LE-Zvt">
+                                                    <rect key="frame" x="156" y="135" width="21" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="21" id="AgE-79-C6V"/>
+                                                        <constraint firstAttribute="height" constant="21" id="dld-Fi-H6n"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwP-45-ndV">
+                                                    <rect key="frame" x="185" y="136.5" width="38" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="author / repoName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-re-gR2">
+                                                    <rect key="frame" x="56" y="13.5" width="311" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.26274509800000001" green="0.47843137250000001" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1J-oj-y7d">
+                                                    <rect key="frame" x="56" y="45.5" width="311" height="81.5"/>
+                                                    <string key="text">The most advanced responsive front-end framework in the world. Quickly create prototypes and production code for sites that work on any kind of device.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="P1J-oj-y7d" firstAttribute="leading" secondItem="a5r-nE-fmm" secondAttribute="leading" constant="56" id="0lM-9h-6ew"/>
+                                                <constraint firstAttribute="trailing" secondItem="P1J-oj-y7d" secondAttribute="trailing" constant="8" id="2M9-tx-myL"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gbT-hV-WzR" secondAttribute="bottom" constant="8" id="8T2-fK-Y0Z"/>
+                                                <constraint firstItem="n70-LE-Zvt" firstAttribute="centerY" secondItem="eGL-OQ-PTx" secondAttribute="centerY" id="BIg-Vi-10N"/>
+                                                <constraint firstItem="gbT-hV-WzR" firstAttribute="leading" secondItem="a5r-nE-fmm" secondAttribute="leading" constant="56" id="BQL-S3-4NS"/>
+                                                <constraint firstItem="GwP-45-ndV" firstAttribute="centerY" secondItem="n70-LE-Zvt" secondAttribute="centerY" id="Bpt-Uf-75d"/>
+                                                <constraint firstAttribute="trailing" secondItem="GFd-re-gR2" secondAttribute="trailing" constant="8" id="J7E-Ep-SEs"/>
+                                                <constraint firstItem="eGL-OQ-PTx" firstAttribute="leading" secondItem="gbT-hV-WzR" secondAttribute="trailing" constant="8" id="Ja1-qW-c9F"/>
+                                                <constraint firstItem="Oox-vZ-pyf" firstAttribute="top" secondItem="a5r-nE-fmm" secondAttribute="top" constant="8" id="QaF-Ng-S3b"/>
+                                                <constraint firstItem="GwP-45-ndV" firstAttribute="leading" secondItem="n70-LE-Zvt" secondAttribute="trailing" constant="8" id="S5f-mh-kyL"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Oox-vZ-pyf" secondAttribute="bottom" constant="16" id="UxW-5G-adE"/>
+                                                <constraint firstItem="GFd-re-gR2" firstAttribute="centerY" secondItem="Oox-vZ-pyf" secondAttribute="centerY" id="ahD-Yb-l5i"/>
+                                                <constraint firstItem="eGL-OQ-PTx" firstAttribute="centerY" secondItem="gbT-hV-WzR" secondAttribute="centerY" id="bbc-Vd-61C"/>
+                                                <constraint firstItem="n70-LE-Zvt" firstAttribute="leading" secondItem="eGL-OQ-PTx" secondAttribute="trailing" constant="35" id="cbN-k2-N40"/>
+                                                <constraint firstItem="GFd-re-gR2" firstAttribute="leading" secondItem="Oox-vZ-pyf" secondAttribute="trailing" constant="13" id="dnm-EZ-X58"/>
+                                                <constraint firstItem="gbT-hV-WzR" firstAttribute="top" secondItem="P1J-oj-y7d" secondAttribute="bottom" constant="8" id="mRM-7L-f3T"/>
+                                                <constraint firstItem="Oox-vZ-pyf" firstAttribute="leading" secondItem="a5r-nE-fmm" secondAttribute="leading" constant="8" id="oKf-0T-Nn1"/>
+                                                <constraint firstItem="P1J-oj-y7d" firstAttribute="top" secondItem="GFd-re-gR2" secondAttribute="bottom" constant="8" id="xHZ-4Y-lhj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorAvatarImageView" destination="Oox-vZ-pyf" id="dJR-qP-4I8"/>
+                                            <outlet property="authorLabel" destination="GFd-re-gR2" id="wdr-81-1sD"/>
+                                            <outlet property="repoDescriptionLabel" destination="P1J-oj-y7d" id="9pZ-6O-gSh"/>
+                                            <outlet property="repoForksLabel" destination="GwP-45-ndV" id="kDl-lm-WxB"/>
+                                            <outlet property="repoStarsLabel" destination="eGL-OQ-PTx" id="VyC-tP-Z2N"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vsh-Fg-g6y" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="9AP-9S-Vdz"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Vsh-Fg-g6y" secondAttribute="bottom" id="Fgr-Ki-OhN"/>
+                            <constraint firstItem="Vsh-Fg-g6y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Q9h-ZC-jKX"/>
+                            <constraint firstAttribute="trailing" secondItem="Vsh-Fg-g6y" secondAttribute="trailing" id="rrv-rV-Nhf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x5q-EH-pP8"/>
+                    <connections>
+                        <outlet property="repoResultsTableView" destination="Vsh-Fg-g6y" id="QK5-Px-oLQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="819" y="-557"/>
+            <point key="canvasLocation" x="818.39999999999998" y="-558.17091454272872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FpP-oR-azb">
@@ -47,4 +148,8 @@
             <point key="canvasLocation" x="132" y="-557"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fork" width="18" height="24"/>
+        <image name="star" width="21" height="24"/>
+    </resources>
 </document>
