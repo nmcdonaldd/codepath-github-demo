@@ -99,11 +99,18 @@ class GithubRepo: CustomStringConvertible {
 
     // Creates a text representation of a GitHub repo
     var description: String {
+        if let guaranteedRepoDescription = repoDescription {
+            return "[Name: \(self.name!)]" +
+                "\n\t[Stars: \(self.stars!)]" +
+                "\n\t[Forks: \(self.forks!)]" +
+                "\n\t[Owner: \(self.ownerHandle!)]" +
+                "\n\t[Avatar: \(self.ownerAvatarURL!)]" +
+                "\n\t[Description: \(guaranteedRepoDescription)]"
+        }
         return "[Name: \(self.name!)]" +
-            "\n\t[Stars: \(self.stars!)]" +
-            "\n\t[Forks: \(self.forks!)]" +
-            "\n\t[Owner: \(self.ownerHandle!)]" +
-            "\n\t[Avatar: \(self.ownerAvatarURL!)]" +
-            "\n\t[Description: \(self.repoDescription!)]"
+                "\n\t[Stars: \(self.stars!)]" +
+                "\n\t[Forks: \(self.forks!)]" +
+                "\n\t[Owner: \(self.ownerHandle!)]" +
+                "\n\t[Avatar: \(self.ownerAvatarURL!)]"
     }
 }

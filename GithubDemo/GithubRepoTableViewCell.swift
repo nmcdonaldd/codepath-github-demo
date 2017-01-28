@@ -17,18 +17,34 @@ class GithubRepoTableViewCell: UITableViewCell {
     @IBOutlet weak var repoForksLabel: UILabel!
     
     var repo: GithubRepo! {
+        
         didSet {
-            
             self.authorAvatarImageView.setImageWith(URL(string: self.repo.ownerAvatarURL!)!)
-            self.authorLabel.text = "\(self.repo.ownerHandle!) / \(self.repo.name!)"
             self.repoDescriptionLabel.text = self.repo.repoDescription!
             self.repoStarsLabel.text = String(self.repo.stars!)
             self.repoForksLabel.text = String(self.repo.forks!)
-            
             self.authorLabel.preferredMaxLayoutWidth = self.authorLabel.frame.width
             self.repoDescriptionLabel.preferredMaxLayoutWidth = self.repoDescriptionLabel.frame.width
-
+            self.setUpBoldedRepoName()
         }
+    }
+    
+    private func setUpBoldedRepoName() {
+        let authorAndRepoName: String = "\(self.repo.ownerHandle!) / "
+        let numOfCharsInAuthor: Int = authorAndRepoName.characters.count
+        let numOfCharsInRepo: Int = self.repo.name!.characters.count
+        let totalString: String = authorAndRepoName + self.repo.name!
+        let range: NSRange = NSRange(location: numOfCharsInAuthor, length: numOfCharsInRepo)
+        self.authorLabel.attributedText = self.attributedString(from: totalString, boldRange: range)
+    }
+    
+    private func attributedString(from string: String, boldRange: NSRange) -> NSMutableAttributedString {
+        let fontSize = CGFloat(20.0)
+        let attrs = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: fontSize)]
+        let nonBoldAttribute = [NSFontAttributeName: UIFont.systemFont(ofSize: fontSize)]
+        let attrString = NSMutableAttributedString(string: string, attributes: nonBoldAttribute)
+        attrString.setAttributes(attrs, range: boldRange)
+        return attrString
     }
     
     override func awakeFromNib() {

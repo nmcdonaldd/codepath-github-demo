@@ -211,6 +211,7 @@
 				TargetAttributes = {
 					6B2DDEE71B02911A00D25281 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3QT27T2PJ3;
 						LastSwiftMigration = 0800;
 					};
 					6B2DDEFC1B02911A00D25281 = {
@@ -486,9 +487,10 @@
 			baseConfigurationReference = D5EDD6C651F700BECD821A77 /* Pods-GithubDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3QT27T2PJ3;
 				INFOPLIST_FILE = GithubDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.GithubDemo.nickdonald;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
@@ -500,9 +502,10 @@
 			baseConfigurationReference = D787DCA4BDFFA74DC9217E77 /* Pods-GithubDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3QT27T2PJ3;
 				INFOPLIST_FILE = GithubDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.GithubDemo.nickdonald;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
