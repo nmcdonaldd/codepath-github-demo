@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 
 // Main ViewController
-class RepoResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RepoResultsViewController: UIViewController, UITableViewDelegate {
 
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
@@ -33,10 +33,26 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
         self.repoResultsTableView.dataSource = self
         self.repoResultsTableView.delegate = self
         self.repoResultsTableView.rowHeight = UITableViewAutomaticDimension
-        self.repoResultsTableView.estimatedRowHeight = 190
+        self.repoResultsTableView.estimatedRowHeight = 195
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardShown(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDismissed(notification:)), name: .UIKeyboardWillHide, object: nil)
 
         // Perform the first search when the view controller first loads
         doSearch()
+    }
+    
+    
+    // MARK: - NotificationCenter Observers
+    
+    @objc private func keyboardDismissed(notification: Notification) {
+        self.repoResultsTableView.contentInset.bottom = 0
+    }
+    
+    @objc private func keyboardShown(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.repoResultsTableView.contentInset.bottom = keyboardSize.height
+        }
     }
 
     // Perform the search.
@@ -59,6 +75,10 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
                 print(error)
         })
     }
+}
+
+
+extension RepoResultsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let repos = self.repos {
