@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="194"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="So9-lO-mOp" id="a5r-nE-fmm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="193"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oox-vZ-pyf">
@@ -49,7 +49,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGL-OQ-PTx">
-                                                    <rect key="frame" x="85" y="139" width="36" height="18"/>
+                                                    <rect key="frame" x="85" y="139.5" width="36" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -62,12 +62,12 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwP-45-ndV">
-                                                    <rect key="frame" x="185" y="139" width="38" height="18"/>
+                                                    <rect key="frame" x="185" y="139.5" width="38" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="author / repoName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-re-gR2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="author / repoName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-re-gR2">
                                                     <rect key="frame" x="56" y="16" width="311" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.47843137250000001" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,13 +88,12 @@
                                                 <constraint firstItem="n70-LE-Zvt" firstAttribute="centerY" secondItem="eGL-OQ-PTx" secondAttribute="centerY" id="BIg-Vi-10N"/>
                                                 <constraint firstItem="gbT-hV-WzR" firstAttribute="leading" secondItem="a5r-nE-fmm" secondAttribute="leading" constant="56" id="BQL-S3-4NS"/>
                                                 <constraint firstItem="GwP-45-ndV" firstAttribute="centerY" secondItem="n70-LE-Zvt" secondAttribute="centerY" id="Bpt-Uf-75d"/>
-                                                <constraint firstAttribute="trailing" secondItem="GFd-re-gR2" secondAttribute="trailing" constant="8" id="J7E-Ep-SEs"/>
                                                 <constraint firstItem="eGL-OQ-PTx" firstAttribute="leading" secondItem="gbT-hV-WzR" secondAttribute="trailing" constant="8" id="Ja1-qW-c9F"/>
                                                 <constraint firstItem="GFd-re-gR2" firstAttribute="top" secondItem="a5r-nE-fmm" secondAttribute="topMargin" constant="8" id="LQ5-86-4rB"/>
+                                                <constraint firstAttribute="trailing" secondItem="GFd-re-gR2" secondAttribute="trailing" constant="8" id="M2m-AY-W6n"/>
                                                 <constraint firstItem="Oox-vZ-pyf" firstAttribute="top" secondItem="a5r-nE-fmm" secondAttribute="top" constant="8" id="QaF-Ng-S3b"/>
                                                 <constraint firstItem="GwP-45-ndV" firstAttribute="leading" secondItem="n70-LE-Zvt" secondAttribute="trailing" constant="8" id="S5f-mh-kyL"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Oox-vZ-pyf" secondAttribute="bottom" constant="16" id="UxW-5G-adE"/>
-                                                <constraint firstItem="GFd-re-gR2" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="Oox-vZ-pyf" secondAttribute="centerY" id="ahD-Yb-l5i"/>
                                                 <constraint firstItem="eGL-OQ-PTx" firstAttribute="centerY" secondItem="gbT-hV-WzR" secondAttribute="centerY" id="bbc-Vd-61C"/>
                                                 <constraint firstItem="n70-LE-Zvt" firstAttribute="leading" secondItem="eGL-OQ-PTx" secondAttribute="trailing" constant="35" id="cbN-k2-N40"/>
                                                 <constraint firstItem="GFd-re-gR2" firstAttribute="leading" secondItem="Oox-vZ-pyf" secondAttribute="trailing" constant="13" id="dnm-EZ-X58"/>

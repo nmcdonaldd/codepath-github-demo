@@ -19,13 +19,11 @@ class GithubRepoTableViewCell: UITableViewCell {
     var repo: GithubRepo! {
         
         didSet {
+            self.setUpBoldedRepoName()
             self.authorAvatarImageView.setImageWith(URL(string: self.repo.ownerAvatarURL!)!)
             self.repoDescriptionLabel.text = self.repo.repoDescription!
             self.repoStarsLabel.text = String(self.repo.stars!)
             self.repoForksLabel.text = String(self.repo.forks!)
-            self.authorLabel.preferredMaxLayoutWidth = self.authorLabel.frame.width
-            self.repoDescriptionLabel.preferredMaxLayoutWidth = self.repoDescriptionLabel.frame.width
-            self.setUpBoldedRepoName()
         }
     }
     
@@ -50,12 +48,6 @@ class GithubRepoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.authorLabel.preferredMaxLayoutWidth = self.authorLabel.frame.width
-        self.repoDescriptionLabel.preferredMaxLayoutWidth = self.repoDescriptionLabel.frame.width
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
