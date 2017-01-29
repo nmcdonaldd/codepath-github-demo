@@ -22,8 +22,8 @@ class GithubRepoTableViewCell: UITableViewCell {
             self.setUpBoldedRepoName()
             self.authorAvatarImageView.setImageWith(URL(string: self.repo.ownerAvatarURL!)!)
             self.repoDescriptionLabel.text = self.repo.repoDescription ?? "No description provided."
-            self.repoStarsLabel.text = String(self.repo.stars!)
-            self.repoForksLabel.text = String(self.repo.forks!)
+            self.repoStarsLabel.text = CommaInserter.insertCommas(into: self.repo.stars!)
+            self.repoForksLabel.text = CommaInserter.insertCommas(into: self.repo.forks!)
         }
     }
     
