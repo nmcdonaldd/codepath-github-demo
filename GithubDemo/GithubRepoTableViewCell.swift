@@ -48,6 +48,9 @@ class GithubRepoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.authorAvatarImageView.layer.cornerRadius = 4.0
+        self.authorAvatarImageView.layer.borderColor = UIColor.black.cgColor
+        self.authorAvatarImageView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

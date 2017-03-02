@@ -13,11 +13,12 @@ import MBProgressHUD
 class RepoResultsViewController: UIViewController, UITableViewDelegate {
 
     var searchBar: UISearchBar!
-    var searchSettings = GithubRepoSearchSettings()
+    var searchSettings = GithubRepoSearchSettings(numOfStars: 0)
 
     var repos: [GithubRepo]!
 
     @IBOutlet weak var repoResultsTableView: UITableView!
+    @IBOutlet weak var searchSettingsBarButtonItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,12 @@ class RepoResultsViewController: UIViewController, UITableViewDelegate {
 
         // Perform the first search when the view controller first loads
         doSearch()
+    }
+    
+    @IBAction func searchSettingsButtonTapped(_ sender: Any) {
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let reposSearchSettingsNavVC: UINavigationController = storyboard.instantiateViewController(withIdentifier: "SearchSettingsNavigationController") as! UINavigationController
+//        self.present(reposSearchSettingsNavVC, animated: true, completion: nil)
     }
     
     
@@ -72,8 +79,15 @@ class RepoResultsViewController: UIViewController, UITableViewDelegate {
 
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
-                print(error)
+                print(error?.localizedDescription)
         })
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navController = segue.destination as! UINavigationController
+        let vc = navController.topViewController as! SearchSettingsViewController
+        //vc.settings =   // ... Search Settings ...
+        vc.settings = self.searchSettings
+        vc.delegate = self
     }
 }
 
@@ -93,6 +107,16 @@ extension RepoResultsViewController: UITableViewDataSource {
         cell.repo = self.repos[indexPath.row]
         
         return cell
+    }
+}
+
+extension RepoResultsViewController: SettingsPresentingViewControllerDelegate {
+    func didCancelSettings() {
+        //Nothing really.
+    }
+    func didSaveSettings(settings: GithubRepoSearchSettings) {
+        self.searchSettings = settings
+        self.doSearch()
     }
 }
 
